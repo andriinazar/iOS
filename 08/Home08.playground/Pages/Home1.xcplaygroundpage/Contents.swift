@@ -4,10 +4,10 @@ import Foundation
 // Task1
 struct Point {
     //01
-    var x: Double = 0
-    var y: Double = 0
-    var radius: Double = 0
-    var angle: Double = 0
+    private var x: Double = 0
+    private var y: Double = 0
+    private var radius: Double = 0
+    private var angle: Double = 0
     
     static let TYPE_DECART = 0
     static let TYPE_POLAR = 1
@@ -44,8 +44,16 @@ struct Point {
         return self
     }
     
-    //04
+    //For task2
+    func getX() -> Double {
+        return self.x
+    }
     
+    func getY() -> Double {
+        return self.y
+    }
+    
+    //04
     func description(_ coordinateType: Int) -> String {
         if coordinateType == 0 {
             return String("Polar coordinate: radius = \(self.radius), angle = \(self.angle)")
@@ -53,7 +61,6 @@ struct Point {
             return String("Decart coordinate: x = \(self.x), y = \(self.y)")
         }
     }
-    
 }
 
 
@@ -130,5 +137,97 @@ print(Point.getPolarCoordinates(point: point))
 print(Point.getDecardCoord(point: point))
 
 
+//Task2
+//01
+struct Figure {
+    var pointCount: Int
+    var pointArray:[Point]
+    
+    //02
+    enum FigureType: Int {
+        case Unknown = 0
+        case Point
+        case Line
+        case Triangle
+        case Quadrangle
+        case Pentagon
+        case Hexagon
+    }
+    var figureType: FigureType
+    
+    //03
+    init(points: [Point]) {
+        self.pointCount = points.count
+        self.pointArray = points
+        if let type = FigureType(rawValue: points.count) {
+           figureType = type
+        } else {
+            figureType = FigureType.Unknown
+        }
+    }
+    //04
+    subscript(index: Int) -> Point? {
+        get{
+            if (index < pointArray.count) {
+                return pointArray[index]
+            } else {
+                return nil
+            }
+        }
+    }
+    //06
+    var square: Double {
+        get {
+            return getSquare()
+        }
+    }
+    
+    var perimeter: Double {
+        get {
+            return getPerimeter()
+        }
+    }
+}
 
+//05
+extension Figure {
+    func getPerimeter() -> Double {
+        var perimeter: Double = 0
+        for point in 0..<figureType.rawValue {
+            if (point != figureType.rawValue - 1) {
+                perimeter = perimeter + calculateDistance(point1:pointArray[point], point2: pointArray[point + 1])
+            } else {
+                perimeter = perimeter + calculateDistance(point1:pointArray[point], point2: pointArray[0])
+            }
+        }
+        return perimeter
+    }
+    func getSquare() -> Double {
+        let square: Double = 1/2
+        var sum: Double = 0
+        for point in 0..<figureType.rawValue - 1 {
+            sum += ((pointArray[point].getX() * pointArray[point + 1].getY()) - (pointArray[point + 1].getX() * pointArray[point].getY()))
+        }
+        return abs(square * sum)
+    }
+    
+    func calculateDistance(point1: Point, point2: Point) -> Double {
+        return sqrt(pow((point2.getX() - point1.getX() ), 2) + pow((point2.getY() - point1.getY()), 2) )
+    }
+}
+
+let points1: [Point] = [Point(x:0, y:0), Point(x:0, y:4), Point(x:4, y:4), Point(x:4, y:0)]
+let points2: [Point] = [Point(x:0, y:0), Point(x:2, y:4), Point(x:4, y:0)]
+
+var figure1: Figure = Figure(points: points1)
+print(figure1.figureType)
+print("Perimeter: \(figure1.perimeter)")
+print("Square: \(figure1.getSquare())")
+print("Calculate Perimeter: \(figure1.getPerimeter())")
+
+var figure2: Figure = Figure(points: points2)
+print("Perimeter: \(figure2.perimeter)")
+print(figure2.perimeter)
+print("Square: \(figure2.getSquare())")
+print("Calculate Perimeter: \(figure2.getPerimeter())")
 
