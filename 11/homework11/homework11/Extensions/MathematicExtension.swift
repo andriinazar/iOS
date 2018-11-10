@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  MathematicExtension.swift
 //  homework11
 //
 //  Created by Andrii Nazar on 11/2/18.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-var mathematic: Mathematics = Mathematics()
-
-
-
-
+extension Mathematics {
+    
+}

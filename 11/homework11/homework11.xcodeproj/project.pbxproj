@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		AB394C33218CD50000567BE3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB394C32218CD50000567BE3 /* main.swift */; };
+		AB394C52218CDA6D00567BE3 /* Figure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB394C51218CDA6D00567BE3 /* Figure.swift */; };
+		AB394C54218CDABA00567BE3 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB394C53218CDABA00567BE3 /* Line.swift */; };
+		AB394C56218CDB0000567BE3 /* Mathematics.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB394C55218CDB0000567BE3 /* Mathematics.swift */; };
+		AB394C58218CDB2E00567BE3 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB394C57218CDB2E00567BE3 /* Point.swift */; };
+		AB394C5A218CDB6300567BE3 /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB394C59218CDB6300567BE3 /* Rectangle.swift */; };
+		AB394C5C218CDB9A00567BE3 /* RectangleBace.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB394C5B218CDB9A00567BE3 /* RectangleBace.swift */; };
+		AB394C5E218CDBCC00567BE3 /* Rhombus.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB394C5D218CDBCC00567BE3 /* Rhombus.swift */; };
+		AB394C60218CDC0300567BE3 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB394C5F218CDC0300567BE3 /* Square.swift */; };
+		AB394C62218CDC3900567BE3 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB394C61218CDC3900567BE3 /* Triangle.swift */; };
+		AB394C65218CE71600567BE3 /* MathematicExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB394C64218CE71600567BE3 /* MathematicExtension.swift */; };
+		AB394C67218CE76300567BE3 /* FiquresExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB394C66218CE76300567BE3 /* FiquresExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +36,17 @@
 /* Begin PBXFileReference section */
 		AB394C2F218CD50000567BE3 /* homework11 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = homework11; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB394C32218CD50000567BE3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AB394C51218CDA6D00567BE3 /* Figure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Figure.swift; sourceTree = "<group>"; };
+		AB394C53218CDABA00567BE3 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		AB394C55218CDB0000567BE3 /* Mathematics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mathematics.swift; sourceTree = "<group>"; };
+		AB394C57218CDB2E00567BE3 /* Point.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
+		AB394C59218CDB6300567BE3 /* Rectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		AB394C5B218CDB9A00567BE3 /* RectangleBace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleBace.swift; sourceTree = "<group>"; };
+		AB394C5D218CDBCC00567BE3 /* Rhombus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rhombus.swift; sourceTree = "<group>"; };
+		AB394C5F218CDC0300567BE3 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		AB394C61218CDC3900567BE3 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		AB394C64218CE71600567BE3 /* MathematicExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathematicExtension.swift; sourceTree = "<group>"; };
+		AB394C66218CE76300567BE3 /* FiquresExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiquresExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +79,36 @@
 		AB394C31218CD50000567BE3 /* homework11 */ = {
 			isa = PBXGroup;
 			children = (
+				AB394C63218CE70200567BE3 /* Extensions */,
+				AB394C50218CDA4100567BE3 /* Figure */,
 				AB394C32218CD50000567BE3 /* main.swift */,
 			);
 			path = homework11;
+			sourceTree = "<group>";
+		};
+		AB394C50218CDA4100567BE3 /* Figure */ = {
+			isa = PBXGroup;
+			children = (
+				AB394C51218CDA6D00567BE3 /* Figure.swift */,
+				AB394C53218CDABA00567BE3 /* Line.swift */,
+				AB394C55218CDB0000567BE3 /* Mathematics.swift */,
+				AB394C57218CDB2E00567BE3 /* Point.swift */,
+				AB394C59218CDB6300567BE3 /* Rectangle.swift */,
+				AB394C5B218CDB9A00567BE3 /* RectangleBace.swift */,
+				AB394C5D218CDBCC00567BE3 /* Rhombus.swift */,
+				AB394C5F218CDC0300567BE3 /* Square.swift */,
+				AB394C61218CDC3900567BE3 /* Triangle.swift */,
+			);
+			path = Figure;
+			sourceTree = "<group>";
+		};
+		AB394C63218CE70200567BE3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB394C64218CE71600567BE3 /* MathematicExtension.swift */,
+				AB394C66218CE76300567BE3 /* FiquresExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +168,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB394C5E218CDBCC00567BE3 /* Rhombus.swift in Sources */,
+				AB394C56218CDB0000567BE3 /* Mathematics.swift in Sources */,
+				AB394C58218CDB2E00567BE3 /* Point.swift in Sources */,
+				AB394C5C218CDB9A00567BE3 /* RectangleBace.swift in Sources */,
+				AB394C54218CDABA00567BE3 /* Line.swift in Sources */,
+				AB394C5A218CDB6300567BE3 /* Rectangle.swift in Sources */,
+				AB394C60218CDC0300567BE3 /* Square.swift in Sources */,
+				AB394C65218CE71600567BE3 /* MathematicExtension.swift in Sources */,
+				AB394C62218CDC3900567BE3 /* Triangle.swift in Sources */,
+				AB394C67218CE76300567BE3 /* FiquresExtension.swift in Sources */,
 				AB394C33218CD50000567BE3 /* main.swift in Sources */,
+				AB394C52218CDA6D00567BE3 /* Figure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
