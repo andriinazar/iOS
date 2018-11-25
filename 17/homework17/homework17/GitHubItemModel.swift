@@ -9,12 +9,12 @@
 import Foundation
 
 public class GitHubItemModel {
-    public let avatarPath: String
-    public let repositoryName: String
-    public let repositoryDiscription: String
-    public let starCount: Int
+    public let avatarPath: String?
+    public let repositoryName: String?
+    public let repositoryDiscription: String?
+    public let starCount: Int?
     
-    init(avatarPath:String, repositoryName: String, repositoryDiscription: String, starCount: Int) {
+    init(avatarPath:String?, repositoryName: String?, repositoryDiscription: String?, starCount: Int?) {
         self.avatarPath = avatarPath
         self.repositoryName = repositoryName
         self.repositoryDiscription = repositoryDiscription
