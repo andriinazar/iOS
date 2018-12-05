@@ -1,0 +1,93 @@
+//
+//  ViewController.swift
+//  final_bank
+//
+//  Created by Andrii Nazar on 12/5/18.
+//  Copyright © 2018 Andrii Nazar. All rights reserved.
+//
+
+import UIKit
+
+class PreviewController: UIViewController, UIScrollViewDelegate {
+
+    @IBOutlet weak var mainScrollView: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    private var slides:[SlideItem] = [];
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        mainScrollView.delegate = self
+        mainScrollView.showsHorizontalScrollIndicator = false
+        mainScrollView.showsVerticalScrollIndicator = false
+        slides = createSlide()
+        setupSlideScrollView(slides: slides)
+        self.pageControl.numberOfPages = slides.count
+        self.pageControl.currentPage = 0
+        self.view.bringSubviewToFront(pageControl)
+    }
+    
+    private func createSlide() -> [SlideItem] {
+        let slide1:SlideItem = Bundle.main.loadNibNamed("SlideItem", owner: self, options: nil)?.first as! SlideItem
+        slide1.pageImage.image = UIImage(named: "piggyBank")
+        slide1.pageHeader.text = "Заощаджуйте кошти"
+        slide1.pageContent.text = "Переглядайте інформацію щодо банківських курсів та вибирайте оптимальний варіант"
+        
+        let slide2:SlideItem = Bundle.main.loadNibNamed("SlideItem", owner: self, options: nil)?.first as! SlideItem
+        slide2.pageImage.image = UIImage(named: "money")
+        slide2.pageHeader.text = "Заробляйте"
+        slide2.pageContent.text = "Отримайте вигідний відсоток з вигідним вкладом"
+        
+        let slide3:SlideItem = Bundle.main.loadNibNamed("SlideItem", owner: self, options: nil)?.first as! SlideItem
+        slide3.pageImage.image = UIImage(named: "analysis")
+        slide3.pageHeader.text = "Аналізуйте"
+        slide3.pageContent.text = "Повна інформація про грошові курси та банки"
+        return [slide1, slide2, slide3]
+    }
+    
+    private func setupSlideScrollView(slides : [SlideItem]) {
+        mainScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        mainScrollView.contentSize = CGSize(width: view.frame.width * CGFloat(slides.count), height: view.frame.height)
+        mainScrollView.isPagingEnabled = true
+        
+        for i in 0 ..< slides.count {
+            slides[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
+            mainScrollView.addSubview(slides[i])
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
+        pageControl.currentPage = Int(pageIndex)
+        
+        let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
+        let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
+        
+        // vertical
+        let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
+        let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
+        
+        let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
+        let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
+        
+        
+        /*
+         * below code changes the background color of view on paging the scrollview
+         */
+        //        self.scrollView(scrollView, didScrollToPercentageOffset: percentageHorizontalOffset)
+        
+        
+        /*
+         * below code scales the imageview on paging the scrollview
+         */
+        /*let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
+        
+        if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
+            slides[0].pageImage.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
+            slides[1].pageImage.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
+            
+        } else if(percentOffset.x > 0.25 && percentOffset.x <= 0.50) {
+            slides[1].pageImage.transform = CGAffineTransform(scaleX: (0.50-percentOffset.x)/0.25, y: (0.50-percentOffset.x)/0.25)
+            slides[2].pageImage.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
+            
+        }*/
+    }
+}
