@@ -13,13 +13,43 @@ class PreviewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     private var slides:[SlideItem] = [];
+    @IBOutlet weak var beginBtn: UIButton!
+    @IBOutlet weak var transparentView: UIView!
+    @IBOutlet weak var coinsImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainScrollView.delegate = self
-        mainScrollView.showsHorizontalScrollIndicator = false
-        mainScrollView.showsVerticalScrollIndicator = false
+        initScrollView();
+        initButton()
+        initSlider()
+        initPageControl()
+        
+        setCoinsImagePosition(xStart: Int(self.view.frame.width - coinsImage.frame.width / 2), yStart: Int(self.view.frame.height - coinsImage.frame.height / 3))
+    }
+    
+    private func setCoinsImagePosition(xStart: Int, yStart: Int) {
+        self.coinsImage.frame.origin.x = CGFloat(xStart)
+        self.coinsImage.frame.origin.y = CGFloat(yStart)
+        self.transparentView.frame.origin.x = CGFloat(xStart)
+        self.transparentView.frame.origin.y = CGFloat(yStart)
+    }
+    
+    private func initSlider() {
         slides = createSlide()
         setupSlideScrollView(slides: slides)
+    }
+    
+    private func initScrollView() {
+        self.mainScrollView.delegate = self
+        self.mainScrollView.showsHorizontalScrollIndicator = false
+        self.mainScrollView.showsVerticalScrollIndicator = false
+    }
+    
+    private func initButton() {
+        self.beginBtn.layer.cornerRadius = 30
+        self.beginBtn.clipsToBounds = true
+    }
+    
+    private func initPageControl() {
         self.pageControl.numberOfPages = slides.count
         self.pageControl.currentPage = 0
         self.view.bringSubviewToFront(pageControl)
@@ -61,14 +91,10 @@ class PreviewController: UIViewController, UIScrollViewDelegate {
         let maximumHorizontalOffset: CGFloat = scrollView.contentSize.width - scrollView.frame.width
         let currentHorizontalOffset: CGFloat = scrollView.contentOffset.x
         
-        // vertical
-        let maximumVerticalOffset: CGFloat = scrollView.contentSize.height - scrollView.frame.height
-        let currentVerticalOffset: CGFloat = scrollView.contentOffset.y
-        
         let percentageHorizontalOffset: CGFloat = currentHorizontalOffset / maximumHorizontalOffset
-        let percentageVerticalOffset: CGFloat = currentVerticalOffset / maximumVerticalOffset
-        
-        
+        //print(percentageHorizontalOffset)
+        let partOfCoinHeigth = 2 * (coinsImage.frame.height / 3)
+        setCoinsImagePosition(xStart: Int(self.view.frame.width - coinsImage.frame.width / 2), yStart: Int(self.view.frame.height - (coinsImage.frame.height / 3) - partOfCoinHeigth * percentageHorizontalOffset))
         /*
          * below code changes the background color of view on paging the scrollview
          */
@@ -89,5 +115,8 @@ class PreviewController: UIViewController, UIScrollViewDelegate {
             slides[2].pageImage.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
             
         }*/
+    }
+    @IBAction func beginButtonClick(_ sender: Any) {
+        
     }
 }
