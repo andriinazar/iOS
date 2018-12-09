@@ -23,6 +23,7 @@
 		ABB29B2921BD6D650072B878 /* Organization.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B2821BD6D650072B878 /* Organization.swift */; };
 		ABB29B2B21BD6D900072B878 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B2A21BD6D900072B878 /* Currency.swift */; };
 		ABB29B3121BDA15D0072B878 /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B3021BDA15D0072B878 /* UIImageView+Cache.swift */; };
+		ABB29B3321BDB15B0072B878 /* BankInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B3221BDB15B0072B878 /* BankInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		ABB29B2821BD6D650072B878 /* Organization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Organization.swift; sourceTree = "<group>"; };
 		ABB29B2A21BD6D900072B878 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		ABB29B3021BDA15D0072B878 /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
+		ABB29B3221BDB15B0072B878 /* BankInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				AB4839F821BB0D9100A76705 /* BankModel.swift */,
 				AB4839FA21BB0F6100A76705 /* BankTableViewCell.swift */,
 				ABB29B3021BDA15D0072B878 /* UIImageView+Cache.swift */,
+				ABB29B3221BDB15B0072B878 /* BankInfoViewController.swift */,
 			);
 			path = final_bank;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			files = (
 				ABB29B2B21BD6D900072B878 /* Currency.swift in Sources */,
 				AB4839E321B85D0700A76705 /* PreviewController.swift in Sources */,
+				ABB29B3321BDB15B0072B878 /* BankInfoViewController.swift in Sources */,
 				AB4839F921BB0D9100A76705 /* BankModel.swift in Sources */,
 				ABB29B2921BD6D650072B878 /* Organization.swift in Sources */,
 				AB4839E121B85D0700A76705 /* AppDelegate.swift in Sources */,

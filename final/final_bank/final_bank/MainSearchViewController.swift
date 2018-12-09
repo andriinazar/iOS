@@ -7,18 +7,20 @@
 //
 
 import UIKit
+import SafariServices
 
-class MainSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainSearchViewController: UIViewController, UITableViewDataSource, CellClickDelegate {
     
     let cellResource: String = "bankCellId"
     private var bankData:[BankModel] = []
     public let baseImageUrl = "https://dummyimage.com/{140}x{120}/{FFFFFF}/{000000}&text="
     public let baseJsonUrl = "http://resources.finance.ua/ua/public/currency-cash.json"
+    @IBOutlet weak var toolBarText: UINavigationItem!
     @IBOutlet weak var bankList: UITableView!
+    @IBOutlet weak var mainContainer: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bankList.dataSource = self
-        self.bankList.delegate = self
         sendRequest()
     }
     
@@ -44,9 +46,24 @@ class MainSearchViewController: UIViewController, UITableViewDataSource, UITable
         if let bankName = bankData[indexPath.row].bankName {
             cell.bankImage.cacheImage(urlString: baseImageUrl + bankName)
         }
+        cell.selectionStyle = .none
+        cell.delegate = self
+        cell.indexPath = indexPath
         cell.contentView.backgroundColor = UIColor.white.withAlphaComponent(0.0)
-        //cell.selectionStyle = .none
         return cell
+    }
+    
+    private func showNewBankPopUp(bank: BankModel) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "bankInfoController") as! BankInfoViewController
+        vc.bankInfo = bank
+        vc.searchBarItem = self.toolBarText
+        self.addChild(vc)
+        UIView.transition(with: self.view, duration: 0.5, options: .layoutSubviews, animations: {
+            self.mainContainer.addSubview(vc.view)
+        }, completion: nil)
+        
+        self.didMove(toParent: self)
     }
     
     func sendRequest() {
@@ -61,6 +78,51 @@ class MainSearchViewController: UIViewController, UITableViewDataSource, UITable
             }
             task.resume()
         }
+    }
+    
+    func moreClick(at index: IndexPath) {
+        showNewBankPopUp(bank: self.bankData[index.row])
+    }
+    
+    func callClick(at index: IndexPath) {
+        if let phone = self.bankData[index.row].bankPhone {
+            guard let number = URL(string: "tel://" + phone) else { return }
+            UIApplication.shared.open(number)
+        } else {
+            showToast(message: "Phone not available")
+        }
+    }
+    
+    func linkClick(at index: IndexPath) {
+        if let link = self.bankData[index.row].bankLink {
+            let url = URL(string: link)
+            let vc = SFSafariViewController(url: url!)
+            present(vc, animated: true, completion: nil)
+        } else {
+            showToast(message: "Email not available")
+        }
+    }
+    
+    func locationClick(at index: IndexPath) {
+        
+    }
+    
+    func showToast(message : String) {
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.textAlignment = .center;
+        toastLabel.font = UIFont(name: "Montserrat-Light", size: 12.0)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
 
 }

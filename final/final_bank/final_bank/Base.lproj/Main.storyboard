@@ -89,7 +89,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Giy-Qt-pFx">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" backIndicatorImage="back" translatesAutoresizingMaskIntoConstraints="NO" id="Giy-Qt-pFx">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="barTintColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -111,7 +111,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbL-k5-uMy">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="20" sectionHeaderHeight="20" estimatedSectionHeaderHeight="20" sectionFooterHeight="28" estimatedSectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="9vE-5b-EF1">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="20" sectionHeaderHeight="20" estimatedSectionHeaderHeight="20" sectionFooterHeight="28" estimatedSectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="9vE-5b-EF1">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
@@ -156,13 +156,29 @@
                                                                     <rect key="frame" x="0.0" y="119" width="355" height="60"/>
                                                                     <items>
                                                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="COZ-B5-tUV"/>
-                                                                        <barButtonItem image="link" id="eZY-K1-fUk"/>
+                                                                        <barButtonItem image="link" id="eZY-K1-fUk">
+                                                                            <connections>
+                                                                                <action selector="linkClick:" destination="aML-Dx-Pxs" id="1vs-Zs-yWp"/>
+                                                                            </connections>
+                                                                        </barButtonItem>
                                                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="2uM-fn-KAS"/>
-                                                                        <barButtonItem image="location" id="tG0-49-2f5"/>
+                                                                        <barButtonItem image="location" id="tG0-49-2f5">
+                                                                            <connections>
+                                                                                <action selector="locationClick:" destination="aML-Dx-Pxs" id="1m3-W5-eSL"/>
+                                                                            </connections>
+                                                                        </barButtonItem>
                                                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="vpp-Gb-AGH"/>
-                                                                        <barButtonItem image="phone" id="cxS-DT-TvN"/>
+                                                                        <barButtonItem image="phone" id="cxS-DT-TvN">
+                                                                            <connections>
+                                                                                <action selector="phoneClick:" destination="aML-Dx-Pxs" id="U9w-4R-nYk"/>
+                                                                            </connections>
+                                                                        </barButtonItem>
                                                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="RWx-0m-KmW"/>
-                                                                        <barButtonItem image="menu" id="FNZ-Zq-ONS"/>
+                                                                        <barButtonItem image="menu" id="FNZ-Zq-ONS">
+                                                                            <connections>
+                                                                                <action selector="moreItemClick:" destination="aML-Dx-Pxs" id="oqp-ur-xta"/>
+                                                                            </connections>
+                                                                        </barButtonItem>
                                                                         <barButtonItem style="plain" systemItem="flexibleSpace" id="oKW-yv-Jtb"/>
                                                                     </items>
                                                                 </toolbar>
@@ -254,15 +270,33 @@
                     </view>
                     <connections>
                         <outlet property="bankList" destination="9vE-5b-EF1" id="OWm-oo-tAk"/>
+                        <outlet property="mainContainer" destination="zbL-k5-uMy" id="Khw-Zq-izY"/>
+                        <outlet property="toolBarText" destination="cay-KK-wkf" id="eNg-mh-RVa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kt2-um-eGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1149.5999999999999" y="-13.043478260869566"/>
         </scene>
+        <!--Bank Info View Controller-->
+        <scene sceneID="75Q-Ru-POQ">
+            <objects>
+                <viewController storyboardIdentifier="bankInfoController" id="jTS-ta-j5u" customClass="BankInfoViewController" customModule="final_bank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xj8-g0-ot5" customClass="Bank">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="dM9-4I-aiU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VEk-8D-n9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2153" y="-5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="OriginalCoint" width="620" height="1112"/>
+        <image name="back" width="32" height="32"/>
         <image name="link" width="32" height="32"/>
         <image name="location" width="32" height="32"/>
         <image name="menu" width="32" height="32"/>

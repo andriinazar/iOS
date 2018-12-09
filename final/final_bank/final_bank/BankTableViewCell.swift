@@ -8,6 +8,13 @@
 
 import UIKit
 
+protocol CellClickDelegate{
+    func moreClick(at index:IndexPath)
+    func callClick(at index:IndexPath)
+    func linkClick(at index:IndexPath)
+    func locationClick(at index:IndexPath)
+}
+
 class BankTableViewCell: UITableViewCell {
     
     @IBOutlet weak var bankName: UILabel!
@@ -17,8 +24,12 @@ class BankTableViewCell: UITableViewCell {
     @IBOutlet weak var bankAddress: UILabel!
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var bankImage: UIImageView!
+    var indexPath:IndexPath!
+    var delegate:CellClickDelegate!
+    private var bankInfo: BankModel?
     
     public func initCell(model: BankModel) {
+        self.bankInfo = model
         self.bankName.text = model.bankName!
         self.bankRegion.text = model.bankRegion!
         self.bankCity.text = model.bankCity!
@@ -44,4 +55,16 @@ class BankTableViewCell: UITableViewCell {
         bankImage.image = icon
     }
     
+    @IBAction func phoneClick(_ sender: Any) {
+        self.delegate?.callClick(at: indexPath)
+    }
+    @IBAction func locationClick(_ sender: Any) {
+        self.delegate?.locationClick(at: indexPath)
+    }
+    @IBAction func linkClick(_ sender: Any) {
+        self.delegate?.linkClick(at: indexPath)
+    }
+    @IBAction func moreItemClick(_ sender: Any) {
+        self.delegate?.moreClick(at: indexPath)
+    }
 }
