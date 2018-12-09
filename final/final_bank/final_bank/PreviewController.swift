@@ -9,7 +9,7 @@
 import UIKit
 
 class PreviewController: UIViewController, UIScrollViewDelegate {
-
+    
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     private var slides:[SlideItem] = [];
@@ -22,7 +22,6 @@ class PreviewController: UIViewController, UIScrollViewDelegate {
         initButton()
         initSlider()
         initPageControl()
-        
         setCoinsImagePosition(xStart: Int(self.view.frame.width - coinsImage.frame.width / 2), yStart: Int(self.view.frame.height - coinsImage.frame.height / 3))
     }
     

@@ -111,39 +111,132 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zbL-k5-uMy">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9vE-5b-EF1">
-                                        <rect key="frame" x="4" y="0.0" width="367" height="603"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="20" sectionHeaderHeight="20" estimatedSectionHeaderHeight="20" sectionFooterHeight="28" estimatedSectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="9vE-5b-EF1">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="142" id="aML-Dx-Pxs">
-                                                <rect key="frame" x="0.0" y="28" width="367" height="142"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bankCellId" rowHeight="191" id="aML-Dx-Pxs" userLabel="BankTableViewCell" customClass="BankTableViewCell" customModule="final_bank" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="20" width="375" height="191"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aML-Dx-Pxs" id="dPH-jz-lgy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="367" height="141.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="191"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Альфа-Банк" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brk-o1-jbA">
-                                                            <rect key="frame" x="15" y="11" width="97" height="21"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7aN-Jr-hfe">
+                                                            <rect key="frame" x="10" y="10" width="355" height="179"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Альфа-Банк" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brk-o1-jbA">
+                                                                    <rect key="frame" x="8" y="8" width="271" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Закарпатська область" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtn-cT-Qe2">
+                                                                    <rect key="frame" x="8" y="41" width="271" height="18"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="18" id="Rg5-2o-2uO"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <color key="textColor" red="0.52941176470588236" green="0.54117647058823526" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ужгород" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtd-VT-NCL">
+                                                                    <rect key="frame" x="8" y="59" width="266" height="18"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <color key="textColor" red="0.52941176469999995" green="0.54117647059999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тел. 0449381615" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dU-lP-wja">
+                                                                    <rect key="frame" x="223" y="67" width="122" height="18"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <color key="textColor" red="0.52941176469999995" green="0.54117647059999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FvA-HJ-2EK">
+                                                                    <rect key="frame" x="0.0" y="119" width="355" height="60"/>
+                                                                    <items>
+                                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="COZ-B5-tUV"/>
+                                                                        <barButtonItem image="link" id="eZY-K1-fUk"/>
+                                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="2uM-fn-KAS"/>
+                                                                        <barButtonItem image="location" id="tG0-49-2f5"/>
+                                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="vpp-Gb-AGH"/>
+                                                                        <barButtonItem image="phone" id="cxS-DT-TvN"/>
+                                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="RWx-0m-KmW"/>
+                                                                        <barButtonItem image="menu" id="FNZ-Zq-ONS"/>
+                                                                        <barButtonItem style="plain" systemItem="flexibleSpace" id="oKW-yv-Jtb"/>
+                                                                    </items>
+                                                                </toolbar>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Адреса: вул.Минайчука 14Б" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgS-Dn-CZD">
+                                                                    <rect key="frame" x="0.0" y="85" width="345" height="34"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <color key="textColor" red="0.52941176469999995" green="0.54117647059999996" blue="0.55294117649999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="laF-qc-5nh">
+                                                                    <rect key="frame" x="259" y="10" width="86" height="47"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="86" id="UnB-ic-XUd"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="FvA-HJ-2EK" firstAttribute="leading" secondItem="VgS-Dn-CZD" secondAttribute="leading" id="Az6-a4-E53"/>
+                                                                <constraint firstItem="7dU-lP-wja" firstAttribute="top" secondItem="dtn-cT-Qe2" secondAttribute="bottom" constant="8" symbolic="YES" id="BEi-JL-U20"/>
+                                                                <constraint firstItem="brk-o1-jbA" firstAttribute="leading" secondItem="7aN-Jr-hfe" secondAttribute="leadingMargin" id="Bsw-sI-meF"/>
+                                                                <constraint firstItem="VgS-Dn-CZD" firstAttribute="leading" secondItem="7aN-Jr-hfe" secondAttribute="leading" id="BwI-jX-84D"/>
+                                                                <constraint firstItem="7dU-lP-wja" firstAttribute="top" secondItem="7aN-Jr-hfe" secondAttribute="top" constant="67" id="DnH-eE-1kk"/>
+                                                                <constraint firstAttribute="trailing" secondItem="brk-o1-jbA" secondAttribute="trailing" constant="76" id="Iwg-cK-KJm"/>
+                                                                <constraint firstItem="VgS-Dn-CZD" firstAttribute="top" secondItem="7dU-lP-wja" secondAttribute="bottom" id="LAP-Nh-QCN"/>
+                                                                <constraint firstItem="7dU-lP-wja" firstAttribute="top" secondItem="laF-qc-5nh" secondAttribute="bottom" constant="10" id="Rqw-N2-PTv"/>
+                                                                <constraint firstAttribute="bottom" secondItem="FvA-HJ-2EK" secondAttribute="bottom" id="SB0-6c-QMT"/>
+                                                                <constraint firstItem="dtn-cT-Qe2" firstAttribute="top" secondItem="brk-o1-jbA" secondAttribute="bottom" constant="7" id="TDj-2S-Jf3"/>
+                                                                <constraint firstAttribute="trailing" secondItem="FvA-HJ-2EK" secondAttribute="trailing" id="d5u-0n-0GI"/>
+                                                                <constraint firstItem="VgS-Dn-CZD" firstAttribute="top" secondItem="wtd-VT-NCL" secondAttribute="bottom" constant="8" symbolic="YES" id="dmd-4e-35H"/>
+                                                                <constraint firstItem="dtn-cT-Qe2" firstAttribute="trailing" secondItem="brk-o1-jbA" secondAttribute="trailing" id="e82-zn-HST"/>
+                                                                <constraint firstAttribute="trailing" secondItem="laF-qc-5nh" secondAttribute="trailing" constant="10" id="gJH-jG-8xk"/>
+                                                                <constraint firstItem="FvA-HJ-2EK" firstAttribute="top" secondItem="VgS-Dn-CZD" secondAttribute="bottom" id="ima-xA-4Hg"/>
+                                                                <constraint firstItem="wtd-VT-NCL" firstAttribute="top" secondItem="dtn-cT-Qe2" secondAttribute="bottom" id="mW4-0h-Kl9"/>
+                                                                <constraint firstItem="dtn-cT-Qe2" firstAttribute="leading" secondItem="wtd-VT-NCL" secondAttribute="leading" id="na3-V8-dEf"/>
+                                                                <constraint firstAttribute="trailing" secondItem="7dU-lP-wja" secondAttribute="trailing" constant="10" id="nju-lT-nAl"/>
+                                                                <constraint firstAttribute="trailing" secondItem="wtd-VT-NCL" secondAttribute="trailing" constant="81" id="oa9-NG-kDA"/>
+                                                                <constraint firstAttribute="trailing" secondItem="laF-qc-5nh" secondAttribute="trailing" constant="10" id="qjR-Zt-Vug"/>
+                                                                <constraint firstItem="dtn-cT-Qe2" firstAttribute="leading" secondItem="brk-o1-jbA" secondAttribute="leading" id="s8C-UJ-Ud6"/>
+                                                                <constraint firstItem="7dU-lP-wja" firstAttribute="trailing" secondItem="VgS-Dn-CZD" secondAttribute="trailing" id="t5c-5h-Tq9"/>
+                                                                <constraint firstItem="laF-qc-5nh" firstAttribute="top" secondItem="7aN-Jr-hfe" secondAttribute="top" constant="10" id="zjd-2a-yJw"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="brk-o1-jbA" firstAttribute="leading" secondItem="dPH-jz-lgy" secondAttribute="leadingMargin" constant="-1" id="0gz-jV-sVh"/>
-                                                        <constraint firstItem="brk-o1-jbA" firstAttribute="top" secondItem="dPH-jz-lgy" secondAttribute="topMargin" constant="-20" id="Ada-Ew-E2S"/>
+                                                        <constraint firstItem="7aN-Jr-hfe" firstAttribute="leading" secondItem="dPH-jz-lgy" secondAttribute="leading" constant="10" id="3d2-BD-ykm"/>
+                                                        <constraint firstAttribute="bottom" secondItem="FvA-HJ-2EK" secondAttribute="bottom" constant="2" id="7yc-EW-bxL"/>
+                                                        <constraint firstItem="7aN-Jr-hfe" firstAttribute="top" secondItem="dPH-jz-lgy" secondAttribute="top" constant="10" id="KbL-lU-Cw4"/>
+                                                        <constraint firstAttribute="trailing" secondItem="7aN-Jr-hfe" secondAttribute="trailing" constant="10" id="Ztc-ka-F0O"/>
+                                                        <constraint firstItem="FvA-HJ-2EK" firstAttribute="top" secondItem="dPH-jz-lgy" secondAttribute="top" constant="129" id="gXr-UL-ZM8"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <outlet property="bankAddress" destination="VgS-Dn-CZD" id="Nmd-kz-fWx"/>
+                                                    <outlet property="bankCity" destination="wtd-VT-NCL" id="lXH-X1-bhZ"/>
+                                                    <outlet property="bankImage" destination="laF-qc-5nh" id="VUh-Jl-Ddg"/>
+                                                    <outlet property="bankName" destination="brk-o1-jbA" id="4Ke-0w-HqQ"/>
+                                                    <outlet property="bankPhone" destination="7dU-lP-wja" id="ODT-rQ-QVA"/>
+                                                    <outlet property="bankRegion" destination="dtn-cT-Qe2" id="C63-Kh-ZpZ"/>
+                                                    <outlet property="content" destination="7aN-Jr-hfe" id="p6P-wS-5wc"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <sections/>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="9vE-5b-EF1" secondAttribute="bottom" id="2Ds-lG-Guh"/>
-                                    <constraint firstAttribute="trailing" secondItem="9vE-5b-EF1" secondAttribute="trailing" constant="4" id="7Cy-pj-FWG"/>
-                                    <constraint firstItem="9vE-5b-EF1" firstAttribute="leading" secondItem="zbL-k5-uMy" secondAttribute="leading" constant="4" id="8xF-Gm-FOk"/>
-                                    <constraint firstItem="9vE-5b-EF1" firstAttribute="top" secondItem="zbL-k5-uMy" secondAttribute="top" id="yaa-s3-zZX"/>
+                                    <constraint firstAttribute="bottom" secondItem="9vE-5b-EF1" secondAttribute="bottom" id="8Jg-HY-Ch2"/>
+                                    <constraint firstItem="9vE-5b-EF1" firstAttribute="leading" secondItem="zbL-k5-uMy" secondAttribute="leading" id="HsP-yY-MM2"/>
+                                    <constraint firstAttribute="trailing" secondItem="9vE-5b-EF1" secondAttribute="trailing" id="c5S-2S-Asw"/>
+                                    <constraint firstItem="9vE-5b-EF1" firstAttribute="top" secondItem="zbL-k5-uMy" secondAttribute="top" id="isA-av-Ksc"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -159,6 +252,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fus-vR-cU3"/>
                     </view>
+                    <connections>
+                        <outlet property="bankList" destination="9vE-5b-EF1" id="OWm-oo-tAk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kt2-um-eGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -167,6 +263,10 @@
     </scenes>
     <resources>
         <image name="OriginalCoint" width="620" height="1112"/>
+        <image name="link" width="32" height="32"/>
+        <image name="location" width="32" height="32"/>
+        <image name="menu" width="32" height="32"/>
+        <image name="phone" width="32" height="32"/>
         <image name="search" width="32" height="32"/>
     </resources>
 </document>
