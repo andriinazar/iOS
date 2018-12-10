@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import CoreLocation
 
 class MainSearchViewController: UIViewController, UITableViewDataSource, CellClickDelegate {
     
@@ -62,7 +63,18 @@ class MainSearchViewController: UIViewController, UITableViewDataSource, CellCli
         UIView.transition(with: self.view, duration: 0.5, options: .layoutSubviews, animations: {
             self.mainContainer.addSubview(vc.view)
         }, completion: nil)
-        
+        self.didMove(toParent: self)
+    }
+    
+    private func showMapView(bank: BankModel) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "mapViewController") as! MapViewController
+        vc.bankInfo = bank
+        vc.searchBarItem = self.toolBarText
+        self.addChild(vc)
+        UIView.transition(with: self.view, duration: 0.5, options: .layoutSubviews, animations: {
+            self.mainContainer.addSubview(vc.view)
+        }, completion: nil)
         self.didMove(toParent: self)
     }
     
@@ -104,7 +116,25 @@ class MainSearchViewController: UIViewController, UITableViewDataSource, CellCli
     }
     
     func locationClick(at index: IndexPath) {
-        
+        showMapView(bank: self.bankData[index.row])
+        /*let geocoder = CLGeocoder()
+        if let address = self.bankData[index.row].bankAddress {
+        let locationString = address
+    
+            geocoder.geocodeAddressString(locationString) { (placemarks, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    if let location = placemarks?.first?.location {
+                        let query = "?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
+                        let urlString = "http://maps.apple.com/".appending(query)
+                        if let url = URL(string: urlString) {
+                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                        }
+                    }
+                }
+            }
+        }*/
     }
     
     func showToast(message : String) {

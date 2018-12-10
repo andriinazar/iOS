@@ -293,6 +293,35 @@
             </objects>
             <point key="canvasLocation" x="2153" y="-5"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="ZRQ-gi-uzb">
+            <objects>
+                <viewController storyboardIdentifier="mapViewController" id="5Hz-Gm-iRm" customClass="MapViewController" customModule="final_bank" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A2B-H0-JI2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LPJ-5d-Zow">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mF6-dm-3ie" firstAttribute="bottom" secondItem="LPJ-5d-Zow" secondAttribute="bottom" id="2or-02-ZKE"/>
+                            <constraint firstItem="mF6-dm-3ie" firstAttribute="trailing" secondItem="LPJ-5d-Zow" secondAttribute="trailing" id="a5R-IQ-Fhq"/>
+                            <constraint firstItem="LPJ-5d-Zow" firstAttribute="top" secondItem="mF6-dm-3ie" secondAttribute="top" id="gRX-tv-qLy"/>
+                            <constraint firstItem="LPJ-5d-Zow" firstAttribute="leading" secondItem="mF6-dm-3ie" secondAttribute="leading" id="qSB-hP-EFb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mF6-dm-3ie"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainMapView" destination="LPJ-5d-Zow" id="BCF-7o-uwb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nsY-MW-RCA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1150" y="726"/>
+        </scene>
     </scenes>
     <resources>
         <image name="OriginalCoint" width="620" height="1112"/>

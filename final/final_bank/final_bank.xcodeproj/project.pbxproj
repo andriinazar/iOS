@@ -24,6 +24,8 @@
 		ABB29B2B21BD6D900072B878 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B2A21BD6D900072B878 /* Currency.swift */; };
 		ABB29B3121BDA15D0072B878 /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B3021BDA15D0072B878 /* UIImageView+Cache.swift */; };
 		ABB29B3321BDB15B0072B878 /* BankInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B3221BDB15B0072B878 /* BankInfoViewController.swift */; };
+		ABB29B3521BDE2160072B878 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B3421BDE2160072B878 /* MapViewController.swift */; };
+		ABB29B3721BDE8650072B878 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B3621BDE8650072B878 /* UIImage+Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		ABB29B2A21BD6D900072B878 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		ABB29B3021BDA15D0072B878 /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
 		ABB29B3221BDB15B0072B878 /* BankInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInfoViewController.swift; sourceTree = "<group>"; };
+		ABB29B3421BDE2160072B878 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = final_bank/Controllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
+		ABB29B3621BDE8650072B878 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,20 +82,16 @@
 		AB4839DF21B85D0700A76705 /* final_bank */ = {
 			isa = PBXGroup;
 			children = (
+				ABB29B3B21BDF84C0072B878 /* Models */,
+				ABB29B3A21BDF83A0072B878 /* Extensions */,
+				ABB29B3921BDF8220072B878 /* Items */,
+				ABB29B3821BDF7FE0072B878 /* Controllers */,
 				ABB29B2321BD6CB80072B878 /* CurrencyInfo */,
 				AB4839E021B85D0700A76705 /* AppDelegate.swift */,
-				AB4839E221B85D0700A76705 /* PreviewController.swift */,
 				AB4839E421B85D0700A76705 /* Main.storyboard */,
 				AB4839E721B85D0800A76705 /* Assets.xcassets */,
 				AB4839E921B85D0800A76705 /* LaunchScreen.storyboard */,
 				AB4839EC21B85D0800A76705 /* Info.plist */,
-				AB4839F221B87ADC00A76705 /* SlideItem.swift */,
-				AB4839F421B87AF600A76705 /* SlideItem.xib */,
-				AB4839F621B9DF2F00A76705 /* MainSearchViewController.swift */,
-				AB4839F821BB0D9100A76705 /* BankModel.swift */,
-				AB4839FA21BB0F6100A76705 /* BankTableViewCell.swift */,
-				ABB29B3021BDA15D0072B878 /* UIImageView+Cache.swift */,
-				ABB29B3221BDB15B0072B878 /* BankInfoViewController.swift */,
 			);
 			path = final_bank;
 			sourceTree = "<group>";
@@ -106,6 +106,44 @@
 				ABB29B2A21BD6D900072B878 /* Currency.swift */,
 			);
 			path = CurrencyInfo;
+			sourceTree = "<group>";
+		};
+		ABB29B3821BDF7FE0072B878 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ABB29B3421BDE2160072B878 /* MapViewController.swift */,
+				AB4839F621B9DF2F00A76705 /* MainSearchViewController.swift */,
+				ABB29B3221BDB15B0072B878 /* BankInfoViewController.swift */,
+				AB4839E221B85D0700A76705 /* PreviewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ABB29B3921BDF8220072B878 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				AB4839F421B87AF600A76705 /* SlideItem.xib */,
+				AB4839FA21BB0F6100A76705 /* BankTableViewCell.swift */,
+				AB4839F221B87ADC00A76705 /* SlideItem.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		ABB29B3A21BDF83A0072B878 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABB29B3021BDA15D0072B878 /* UIImageView+Cache.swift */,
+				ABB29B3621BDE8650072B878 /* UIImage+Color.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ABB29B3B21BDF84C0072B878 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AB4839F821BB0D9100A76705 /* BankModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +220,7 @@
 			files = (
 				ABB29B2B21BD6D900072B878 /* Currency.swift in Sources */,
 				AB4839E321B85D0700A76705 /* PreviewController.swift in Sources */,
+				ABB29B3721BDE8650072B878 /* UIImage+Color.swift in Sources */,
 				ABB29B3321BDB15B0072B878 /* BankInfoViewController.swift in Sources */,
 				AB4839F921BB0D9100A76705 /* BankModel.swift in Sources */,
 				ABB29B2921BD6D650072B878 /* Organization.swift in Sources */,
@@ -193,6 +232,7 @@
 				AB4839F721B9DF2F00A76705 /* MainSearchViewController.swift in Sources */,
 				AB4839FB21BB0F6100A76705 /* BankTableViewCell.swift in Sources */,
 				ABB29B2221BD6C850072B878 /* CurencyDataAdapter.swift in Sources */,
+				ABB29B3521BDE2160072B878 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

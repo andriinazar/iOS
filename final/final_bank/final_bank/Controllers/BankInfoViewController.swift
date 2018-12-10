@@ -17,7 +17,6 @@ class BankInfoViewController: UIViewController {
         self.navigationItem.hidesBackButton = false
         self.searchBarItem?.title = bankInfo?.bankName
         self.searchBarItem?.leftBarButtonItem = UIBarButtonItem(customView: makeBackButton())
-        //self.searchBarItem?.backBarButtonItem?.image = UIImage(named: "back")
     }
     
     func makeBackButton() -> UIButton {
