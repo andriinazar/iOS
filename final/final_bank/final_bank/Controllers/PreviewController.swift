@@ -94,26 +94,6 @@ class PreviewController: UIViewController, UIScrollViewDelegate {
         //print(percentageHorizontalOffset)
         let partOfCoinHeigth = 2 * (coinsImage.frame.height / 3)
         setCoinsImagePosition(xStart: Int(self.view.frame.width - coinsImage.frame.width / 2), yStart: Int(self.view.frame.height - (coinsImage.frame.height / 3) - partOfCoinHeigth * percentageHorizontalOffset))
-        /*
-         * below code changes the background color of view on paging the scrollview
-         */
-        //        self.scrollView(scrollView, didScrollToPercentageOffset: percentageHorizontalOffset)
-        
-        
-        /*
-         * below code scales the imageview on paging the scrollview
-         */
-        /*let percentOffset: CGPoint = CGPoint(x: percentageHorizontalOffset, y: percentageVerticalOffset)
-        
-        if(percentOffset.x > 0 && percentOffset.x <= 0.25) {
-            slides[0].pageImage.transform = CGAffineTransform(scaleX: (0.25-percentOffset.x)/0.25, y: (0.25-percentOffset.x)/0.25)
-            slides[1].pageImage.transform = CGAffineTransform(scaleX: percentOffset.x/0.25, y: percentOffset.x/0.25)
-            
-        } else if(percentOffset.x > 0.25 && percentOffset.x <= 0.50) {
-            slides[1].pageImage.transform = CGAffineTransform(scaleX: (0.50-percentOffset.x)/0.25, y: (0.50-percentOffset.x)/0.25)
-            slides[2].pageImage.transform = CGAffineTransform(scaleX: percentOffset.x/0.50, y: percentOffset.x/0.50)
-            
-        }*/
     }
     @IBAction func beginButtonClick(_ sender: Any) {
         

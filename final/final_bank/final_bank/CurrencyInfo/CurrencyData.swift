@@ -8,27 +8,12 @@
 
 import Foundation
 
-// To parse the JSON, add this file to your project and do:
-//
-//   let currencyData = try? newJSONDecoder().decode(CurrencyData.self, from: jsonData)
-//
-// To read values from URLs:
-//
-//   let task = URLSession.shared.currencyDataTask(with: url) { currencyData, response, error in
-//     if let currencyData = currencyData {
-//       ...
-//     }
-//   }
-//   task.resume()
-
-import Foundation
-
 class CurrencyData: Codable {
     let sourceID: String?
     let date: Date?
     let organizations: [Organization]?
     let orgTypes: [String: String]?
-    let currencies: Currencies?
+    let currencies: [String: String]?
     let regions: [String: String]?
     let cities: [String: String]?
     
@@ -37,7 +22,7 @@ class CurrencyData: Codable {
         case date, organizations, orgTypes, currencies, regions, cities
     }
     
-    init(sourceID: String?, date: Date?, organizations: [Organization]?, orgTypes: [String: String]?, currencies: Currencies?, regions: [String: String]?, cities: [String: String]?) {
+    init(sourceID: String?, date: Date?, organizations: [Organization]?, orgTypes: [String: String]?, currencies: [String: String]?, regions: [String: String]?, cities: [String: String]?) {
         self.sourceID = sourceID
         self.date = date
         self.organizations = organizations

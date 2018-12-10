@@ -21,8 +21,14 @@ class MainSearchViewController: UIViewController, UITableViewDataSource, CellCli
     @IBOutlet weak var mainContainer: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        saveLogin()
         self.bankList.dataSource = self
         sendRequest()
+    }
+    
+    private func saveLogin() {
+        UserDefaults.standard.set(true, forKey: "showPreivew")
+        UserDefaults.standard.synchronize() 
     }
     
     private func initBankData(data: [BankModel]) {
@@ -117,24 +123,6 @@ class MainSearchViewController: UIViewController, UITableViewDataSource, CellCli
     
     func locationClick(at index: IndexPath) {
         showMapView(bank: self.bankData[index.row])
-        /*let geocoder = CLGeocoder()
-        if let address = self.bankData[index.row].bankAddress {
-        let locationString = address
-    
-            geocoder.geocodeAddressString(locationString) { (placemarks, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    if let location = placemarks?.first?.location {
-                        let query = "?ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
-                        let urlString = "http://maps.apple.com/".appending(query)
-                        if let url = URL(string: urlString) {
-                            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                        }
-                    }
-                }
-            }
-        }*/
     }
     
     func showToast(message : String) {

@@ -24,6 +24,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.navigationItem.hidesBackButton = false
         self.searchBarItem?.title = bankInfo?.bankName
         self.searchBarItem?.leftBarButtonItem = UIBarButtonItem(customView: makeBackButton())
+        self.searchBarItem?.rightBarButtonItem = UIBarButtonItem(customView: makeShareButton())
         setupMapLocation()
         getUserLocation()
     }
@@ -48,6 +49,26 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         let getMovedMapCenter: CLLocation = CLLocation(latitude: getLat, longitude: getLon)
         self.centerMapOnLocation(location: getMovedMapCenter)
         //self.mainMapView.setRegion(region, animated: true)
+    }
+    
+    private func makeShareButton() -> UIButton {
+        let shareButtonImage = UIImage(named: "share")?.withRenderingMode(.alwaysTemplate)
+        let shareButton = UIButton(type: .custom)
+        shareButton.setImage(shareButtonImage, for: .normal)
+        shareButton.setTitleColor(.blue, for: .normal)
+        shareButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0,right: -10)
+        shareButton.sizeToFit()
+        return shareButton
+    }
+    
+    private func makeSearchButton() -> UIButton {
+        let searchButtonImage = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
+        let searchButton = UIButton(type: .custom)
+        searchButton.setImage(searchButtonImage, for: .normal)
+        searchButton.setTitleColor(.blue, for: .normal)
+        searchButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0,right: -10)
+        searchButton.sizeToFit()
+        return searchButton
     }
     
     private func setupMapLocation() {
@@ -90,19 +111,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     @objc func backButtonPressed() {
+        self.searchBarItem?.rightBarButtonItem = UIBarButtonItem(customView: makeSearchButton())
         self.searchBarItem?.title = "Convert Lab"
         self.searchBarItem?.leftBarButtonItem = nil
         self.view.removeFromSuperview()
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
         guard !annotation.isKind(of: MKUserLocation.self) else {
             return nil
         }
-        
         let annotationIdentifier = "AnnotationIdentifier"
-        
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
@@ -119,7 +138,5 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
         }
         return annotationView
-        
     }
-
 }

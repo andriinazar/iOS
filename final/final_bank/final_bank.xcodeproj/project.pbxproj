@@ -26,6 +26,9 @@
 		ABB29B3321BDB15B0072B878 /* BankInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B3221BDB15B0072B878 /* BankInfoViewController.swift */; };
 		ABB29B3521BDE2160072B878 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B3421BDE2160072B878 /* MapViewController.swift */; };
 		ABB29B3721BDE8650072B878 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B3621BDE8650072B878 /* UIImage+Color.swift */; };
+		ABB29B3F21BE0AEE0072B878 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B3E21BE0AEE0072B878 /* CurrencyTableViewCell.swift */; };
+		ABB29B4121BE1E650072B878 /* CurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B4021BE1E650072B878 /* CurrencyModel.swift */; };
+		ABB29B4321BE217B0072B878 /* TableView+WrapContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB29B4221BE217B0072B878 /* TableView+WrapContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		ABB29B3221BDB15B0072B878 /* BankInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInfoViewController.swift; sourceTree = "<group>"; };
 		ABB29B3421BDE2160072B878 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = final_bank/Controllers/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		ABB29B3621BDE8650072B878 /* UIImage+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
+		ABB29B3E21BE0AEE0072B878 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		ABB29B4021BE1E650072B878 /* CurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyModel.swift; sourceTree = "<group>"; };
+		ABB29B4221BE217B0072B878 /* TableView+WrapContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+WrapContent.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 				AB4839F421B87AF600A76705 /* SlideItem.xib */,
 				AB4839FA21BB0F6100A76705 /* BankTableViewCell.swift */,
 				AB4839F221B87ADC00A76705 /* SlideItem.swift */,
+				ABB29B3E21BE0AEE0072B878 /* CurrencyTableViewCell.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -134,6 +141,7 @@
 			children = (
 				ABB29B3021BDA15D0072B878 /* UIImageView+Cache.swift */,
 				ABB29B3621BDE8650072B878 /* UIImage+Color.swift */,
+				ABB29B4221BE217B0072B878 /* TableView+WrapContent.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				AB4839F821BB0D9100A76705 /* BankModel.swift */,
+				ABB29B4021BE1E650072B878 /* CurrencyModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -222,6 +231,8 @@
 				AB4839E321B85D0700A76705 /* PreviewController.swift in Sources */,
 				ABB29B3721BDE8650072B878 /* UIImage+Color.swift in Sources */,
 				ABB29B3321BDB15B0072B878 /* BankInfoViewController.swift in Sources */,
+				ABB29B3F21BE0AEE0072B878 /* CurrencyTableViewCell.swift in Sources */,
+				ABB29B4321BE217B0072B878 /* TableView+WrapContent.swift in Sources */,
 				AB4839F921BB0D9100A76705 /* BankModel.swift in Sources */,
 				ABB29B2921BD6D650072B878 /* Organization.swift in Sources */,
 				AB4839E121B85D0700A76705 /* AppDelegate.swift in Sources */,
@@ -233,6 +244,7 @@
 				AB4839FB21BB0F6100A76705 /* BankTableViewCell.swift in Sources */,
 				ABB29B2221BD6C850072B878 /* CurencyDataAdapter.swift in Sources */,
 				ABB29B3521BDE2160072B878 /* MapViewController.swift in Sources */,
+				ABB29B4121BE1E650072B878 /* CurrencyModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

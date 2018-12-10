@@ -15,21 +15,22 @@ public class CurencyDataAdapter {
         if data.organizations != nil {
             for organization in data.organizations! {
                 let bankInfo = BankModel()
-                    bankInfo.bankName = organization.title
-                    bankInfo.bankLink = organization.link
-                    bankInfo.bankAddress = organization.address
-                    bankInfo.currencies = organization.currencies
-                    bankInfo.bankPhone = organization.phone
-                    if let cities = data.cities {
-                        if let id = organization.cityID {
-                            bankInfo.bankCity = cities[id]
-                        }
+                bankInfo.bankName = organization.title
+                bankInfo.bankLink = organization.link
+                bankInfo.bankAddress = organization.address
+                bankInfo.currencies = organization.currencies
+                bankInfo.bankPhone = organization.phone
+                if let cities = data.cities {
+                    if let id = organization.cityID {
+                        bankInfo.bankCity = cities[id]
                     }
-                    if let regions = data.regions {
-                        if let id = organization.regionID {
-                            bankInfo.bankRegion = regions[id]
-                        }
+                }
+                if let regions = data.regions {
+                    if let id = organization.regionID {
+                        bankInfo.bankRegion = regions[id]
                     }
+                }
+                bankInfo.currencyName = data.currencies
                 bankModel.append(bankInfo)
             }
         }

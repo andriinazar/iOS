@@ -18,6 +18,7 @@ class BankModel {
     public var bankIcon: UIImage?
     public var currencies: [String:Currency]?
     public var bankLink: String?
+    public var currencyName: [String: String]?
     
     // empty constructor
     init (){}
